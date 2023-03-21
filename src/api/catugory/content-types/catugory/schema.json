@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "catugories",
+  "info": {
+    "singularName": "catugory",
+    "pluralName": "catugories",
+    "displayName": "catugory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "catugory"
+    }
+  }
+}
